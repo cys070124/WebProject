@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }   
         .profile{
             border-radius: 70%;
         }
         .font{
             font-size:16px;
+        }
+        .a{
+            display: inline-block;
+            width: 50px;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -19,13 +27,17 @@
         <img class="profile" style="width:300px;" src= "C:\Users\조윤서\Desktop\조윤서.jpg">
     </div>
     <h1 style="color:midnightblue;">Cho Yun Seo</h1>
+    <nav>
+        <a href="#page-1">Information</a>
+        <a href="#page-2">History</a>
+    </nav>
     <hr>
-    <h2>Information</h2>
+    <h2 id="page-1">Information</h2>
     <p class="font">조윤서 포트폴리오 홈페이지</p>
     <marquee  behavior="" direction="right">         
         <img src= "C:\Users\조윤서\Desktop\logo.png"> 
     </marquee>
     <hr>
-    <h2>History</h2>  
+    <h2 id="page-2">History</h2> 
 </body>
 </html>
