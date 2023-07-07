@@ -12,13 +12,11 @@
         .profile{
             border-radius: 70%;
         }
-        .font{
-            font-size:16px;
-        }
         .a{
             display: inline-block;
-            width: 50px;
+            width: 120px;
             text-decoration: none;
+            font-size:large;
         }
         .container{
             display: flex;
@@ -35,7 +33,7 @@
         position: relative;
     
         /* size */
-        width: 100%;
+        width: 98vw;
     
         /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
         user-select: none;
@@ -51,8 +49,8 @@
         left: 0px;
     
         /* size */
-        width: 101%;
-        height: 280px;
+        width: 98vw;
+        height: 360px;
         /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
         flex-shrink: 0;
     
@@ -98,7 +96,7 @@
         background-color: blueviolet;
     }
     .slide_item.item4 {
-        background-color: sandybrown;
+        background-color:orange;
     }
     .slide_item.item5 {
         background-color: cornflowerblue;
@@ -148,18 +146,19 @@
     </style>
 </head>
 <body>
+    <br><br>
+    <h1 style="font-size:36px;">SELF-INTRODUCTION With PORTFOLIO</h1>
+    <hr>
+    <nav>
+        <a href="#page-1" class="a" style="color:gray">Information</a>
+        <a href="#page-2" class="a" style="color:gray">History</a>
+    </nav>
+    <hr>
+    <h1 id="page-1">Information</h1>
     <div class="container">
         <img class="profile" style="width:300px;" src= "C:\Users\조윤서\Desktop\조윤서.jpg">
         <h1>Cho Yun Seo</h1>
     </div>
-    <hr>
-    <h2>Table of Contents</h2>
-    <nav>
-        <a href="#page-1">Information</a>
-        <a href="#page-2">History</a>
-    </nav>
-    <hr>
-    <h2 id="page-1">Information</h2>
     <div class="slide slide_wrap">
         <div class="slide_item item1">Preparing</div>
         <div class="slide_item item2">Preparing</div>
@@ -174,7 +173,7 @@
         <img src= "C:\Users\조윤서\Desktop\logo.png"> 
     </marquee>
     <hr>
-    <h2 id="page-2">History</h2> 
+    <h1 id="page-2">History</h1> 
     <script>
         // 슬라이크 전체 크기(width 구하기)
         const slide = document.querySelector(".slide");
