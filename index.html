@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Open+Sans:wght@300&family=Raleway:wght@200&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +14,58 @@
     <style>
         html {
             scroll-behavior: smooth;
+            font-family: 'Nanum Pen Script', cursive;
+            font-family: 'Raleway', sans-serif;
         }
-        .profile{
-            border-radius: 70%;
+        .clock {
+        font-family:tahoma;
+        font-size:240pt;
+        color:#006699;
+        }
+        .arrow1 {
+            position: relative;
+        }
+        .arrow1::after {
+            position: absolute;
+            left: 0; 
+            top: 0; 
+            content: '';
+            width: 45px; /* 사이즈 */
+            height: 45px; /* 사이즈 */
+            border-top: 5px solid #000; /* 선 두께 */
+            border-right: 5px solid #000; /* 선 두께 */
+            transform: rotate(225deg); /* 각도 */
+        }
+        .arrow2 {
+            position: relative;
+        }
+        .arrow2::after {
+            position: absolute;
+            left: 0; 
+            top: 0; 
+            content: '';
+            width: 45px; /* 사이즈 */
+            height: 45px; /* 사이즈 */
+            border-top: 5px solid #000; /* 선 두께 */
+            border-right: 5px solid #000; /* 선 두께 */
+            transform: rotate(45deg); /* 각도 */
+        }
+        .a:hover {
+            color:salmon;
         }
         .a{
+            color:gray;
             display: inline-block;
-            width: 120px;
             text-decoration: none;
-            font-size:large;
+            font-size:24px;
+        }
+        .h:hover {
+            color:cornflowerblue
+        }
+        .h{
+            color:black;
+            text-decoration: none;
+            font-size:60px;
         }
         .container{
             display: flex;
@@ -69,26 +118,20 @@
         position: absolute;
         /* 버튼이 중앙에 위치하게 하기위해 계산 */
         top: calc(50% - 16px);
-    
-        /* size */
-        width: 32px;
-        height: 32px;
-    
         /* style */
-        border-radius: 100%;
-        background-color: #cccc;
         cursor: pointer;
     }
     
     .slide_prev_button {
-        left: 10px;
+        left: 25px;
     }
     .slide_next_button {
-        right: 10px;
+        right: 75px;
     }
     
     /* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
     .slide_item.item1 {
+
     }
     .slide_item.item2 {
         background-color: aqua;
@@ -147,11 +190,21 @@
     </style>
 </head>
 <body>
-        <h1>SELF-INTRODUCTION With PORTFOLIO</h1>
+    <div class="header" style="justify-content: space-between; align-items: center; display: flex;">
+        <p style="font-size:32px; text-align: left;">Cho Yun Seo</p>
+        <p style="font-size:32px; text-align: right; position: relative; ">Current Time : <span style="font-family: 'Open Sans', sans-serif;" id="current-time"></span></p>
+    </div>
+    <h1><a class="h">SELF-INTRODUCTION With PORTFOLIO</a></h1>
     <hr>
     <nav>
-        <a href="#page-1" class="a" style="color:gray">Information</a>
-        <a href="#page-2" class="a" style="color:gray">My Life</a>
+        &nbsp;&nbsp;
+        <a class="a">Home</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#page-1" class="a">Information</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#page-2" class="a">My Life</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#page-3" class="a">Contact</a>
     </nav>
     <hr>
     <div class="container">
@@ -164,16 +217,67 @@
         <div class="slide_item item3">Preparing</div>
         <div class="slide_item item4">Preparing</div>
         <div class="slide_item item5">Preparing</div>
-        <div class="slide_prev_button slide_button">◀</div>
-        <div class="slide_next_button slide_button">▶</div>
+        <div class="slide_prev_button slide_button"><span class="arrow1"></span></div>
+        <div class="slide_next_button slide_button"><span class="arrow2"></span></div>
         <ul class="slide_pagination"></ul>
     </div>
+    <hr>
+    <h1 style="font-size: 40px;" id="page-1">Information</h1>
+    <p style="font-size: 20px; font-family: 'Open Sans', sans-serif;">안녕하세요, 성실한 개발자가 되기위해 노력하는 조윤서입니다.</p>
+    <p style="font-size: 20px; font-family: 'Open Sans', sans-serif;">부산소프트웨어마이스터고등학교 3기 학생입니다.</p>
+    <hr>
+    <h1 style="font-size: 40px;" id="page-2">My Life</h1>
+    <ul>
+        <li>
+            <p style="font-size: 22px; font-family: 'Open Sans', sans-serif;">2007.01.24  출생</p>
+            <p style="font-size: 22px; font-family: 'Open Sans', sans-serif;">2020.02.06  부곡초등학교 졸업</p>
+            <p style="font-size: 22px; font-family: 'Open Sans', sans-serif;">2023.02.09  금양중학교 졸업</p>
+            <p style="font-size: 22px; font-family: 'Open Sans', sans-serif;">2023.03.02  부산소프트웨어마이스터고등학교 입학</p>
+        </li>
+    </ul>
+    <hr>
+    <h1 style="font-size: 40px;" id="page-3">Contact</h1>
+    <div style="display:flex ">
+        <a href = "https://github.com/cys070124" target = _blank>
+            <img src = "Github logo.png">
+        </a>
+        <a href = "https://www.notion.so/186c73ac94fc4ce0b63e648d774cc9d9" style="position: absolute; left:300px;" target = _blank>
+            <img src = "Notion Logo.png">
+        </a>
+        <a href = "https://www.instagram.com/cys_070124/" style="position: absolute; left:550px;" target = _blank>
+            <img src = "instagram logo.png">
+        </a>
+        <p style="font-family: 'Open Sans', sans-serif; font-size:30px; position: absolute; right:0px;" target = _blank>Number : 010-5095-4776<br>E-mail : cys070124@gmail.com</p>
+    </div>
+    <hr>
     <marquee direction="right">         
         <img src= "logo.png"> 
     </marquee>
-    <hr>
-    <h1 id="page-2">My Life</h1> 
     <script>
+        // 현재 시간을 표시하는 함수
+        function showCurrentTime() {
+        var now = new Date(); // 현재 시간을 가져옴
+        var hours = now.getHours(); // 시간
+        var minutes = now.getMinutes(); // 분
+        var seconds = now.getSeconds(); // 초
+
+        // 시, 분, 초가 한 자리 숫자인 경우 앞에 0을 추가하여 두 자리 숫자로 표시
+        if (hours < 10) {
+            hours = '0' + hours;
+        }
+        if (minutes < 10) {
+            minutes = '0' + minutes;
+        }
+        if (seconds < 10) {
+            seconds = '0' + seconds;
+        }
+
+        var currentTimeString = hours + ':' + minutes + ':' + seconds; // 시간 문자열 생성
+        document.getElementById('current-time').textContent = currentTimeString; // HTML에 표시
+        }
+
+        // 1초마다 showCurrentTime 함수를 호출하여 시간을 업데이트
+        setInterval(showCurrentTime, 1000);
         // 슬라이크 전체 크기(width 구하기)
         const slide = document.querySelector(".slide");
         let slideWidth = slide.clientWidth;
